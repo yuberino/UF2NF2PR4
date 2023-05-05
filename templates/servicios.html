@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block layout %}
+
+    <!-- Servicios de Seat -->
+    <div class="container my-4">
+        <h1>Servicios de Seat</h1>
+        <p>En Seat ofrecemos una amplia gama de servicios para tu vehículo:</p>
+        <ul>
+            <li>Reparación de incidencias y averías</li>
+            <li>Mantenimiento preventivo y correctivo</li>
+            <li>Cambio de neumáticos</li>
+            <li>Instalación de accesorios y repuestos originales</li>
+            <li>Asesoramiento en seguros y financiamiento</li>
+            <li>Inspecciones técnicas y revisiones periódicas</li>
+        </ul>
+    </div>
+
+    <!-- Formulario de solicitud de servicios -->
+    <div class="container my-4">
+        <h2>Solicita un servicio</h2>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="servicio">Tipo de servicio</label>
+                <select class="form-control" id="servicio" name="servicio" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Reparación de incidencias y averías">Reparación de incidencias y averías</option>
+                    <option value="Mantenimiento preventivo y correctivo">Mantenimiento preventivo y correctivo</option>
+                    <option value="Cambio de neumáticos">Cambio de neumáticos</option>
+                    <option value="Instalación de accesorios y repuestos originales">Instalación de accesorios y repuestos originales</option>
+                    <option value="Asesoramiento en seguros y financiamiento">Asesoramiento en seguros y financiamiento</option>
+                    <option value="Inspecciones técnicas y revisiones periódicas">Inspecciones técnicas y revisiones periódicas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje adicional</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        </form>
+    </div>
+
+{% endblock %}
