@@ -3,6 +3,66 @@
 
 {% block layout %}
 
+    <!-- Información de contacto -->
+    <div class="container my-4">
+        <h1>Contacto</h1>
+        <p>Puedes contactar con nosotros por teléfono, correo electrónico o en persona:</p>
+        <ul>
+            <li>Teléfono: +1 234 567 890</li>
+            <li>Correo electrónico: info@seat.com</li>
+            <li>Dirección: Avenida de Europa, 19, 28108 Alcobendas, Madrid, España</li>
+        </ul>
+    </div>
 
+    <!-- Formulario de contacto -->
+    <div class="container my-4">
+        <h2>¿Cómo podemos ayudarte?</h2>
+        <form action="/submit_contacto" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="motivo">Motivo de contacto</label>
+                <select class="form-control" id="motivo" name="motivo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Información general">Información general</option>
+                    <option value="Soporte técnico">Soporte técnico</option>
+                    <option value="Ventas">Ventas</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+            <div class="form-group" id="motivo-otros" style="display: none;">
+                <label for="motivo-otros-input">Especifica el motivo</label>
+                <input type="text" class="form-control" id="motivo-otros-input" name="motivo-otros">
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        </form>
+    </div>
+    <script>
+        // Mostrar el campo "motivo-otros" solo si se selecciona la opción "Otros"
+        var motivoSelect = document.getElementById("motivo");
+        var motivoOtrosDiv = document.getElementById("motivo-otros");
+        var motivoOtrosInput = document.getElementById("motivo-otros-input");
+
+        motivoSelect.addEventListener("change", function() {
+            if (this.value == "Otros") {
+                motivoOtrosDiv.style.display = "block";
+                motivoOtrosInput.required = true;
+            } else {
+                motivoOtrosDiv.style.display = "none";
+                motivoOtrosInput.required = false;
+            }
+        });
+    </script>
 
 {% endblock %}
