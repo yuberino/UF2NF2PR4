@@ -3,14 +3,12 @@
 {% block layout %}
 
     <div class="container my-4">
-        {% if variable1 %}
+        {% if variable2 %}
         <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">¡Gracias por enviar tu solicitud!</h4>
+            <h4 class="alert-heading">¡Hola, {{ nombre }}. Gracias por enviar tu solicitud!</h4>
             <p>Tu solicitud de contacto ha sido enviada correctamente. Nos pondremos en contacto contigo a la brevedad posible.</p>
         </div>
         {% endif %}
-        <h2>Hola, {{ nombre }}.</h2>
-        <p>Gracias, en breve nos pondremos en contacto contigo.</p>
     </div>
 
 {% endblock %}
